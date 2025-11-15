@@ -274,7 +274,7 @@ const allProjects = [
       "Our eCommerce UI/UX solutions help businesses boost sales, reduce friction, and improve customer loyalty. We specialize in crafting interfaces that are **easy to develop on Shopify, WordPress, or custom platforms**, delivering both beauty and functionality.",
 
     images: [
-      "./images/ChatGpt.webp",
+      "./images/Ecomerse.webp",
       "./images/wireframe.webp",
       "./images/maping.webp",
       "./images/styleguide.webp",
@@ -630,7 +630,7 @@ const row1Images = [
 const row2Images = [
   "./images/saas.webp",
   "./images/mob.webp",
-  "./images/ChatGpt.webp",
+  "./images/.webp",
   "./images/ed.webp",
   "./images/grafic.webp",
   "./images/fin.webp",
@@ -845,3 +845,12 @@ faqItems.forEach((item) => {
     item.classList.toggle("active");
   });
 });
+
+
+
+// loder 
+
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    loader.classList.add("hide");
+  });
