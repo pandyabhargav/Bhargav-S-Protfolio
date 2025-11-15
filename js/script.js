@@ -630,7 +630,7 @@ const row1Images = [
 const row2Images = [
   "./images/saas.webp",
   "./images/mob.webp",
-  "./images/.webp",
+  "./images/Ecomerse.webp",
   "./images/ed.webp",
   "./images/grafic.webp",
   "./images/fin.webp",
