@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhargav Sutariya</title>
+  <link rel="icon" type="image/png" href="./images/logo.svg">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-heading: #ffffff;
+      /* Headings */
+      --color-paragraph: #dcdcdc;
+      /* Paragraphs */
+      --color-card-heading: #ffffff;
+      /* Glass card heading */
+      --color-card-paragraph: #e0e0e0;
+      /* Glass card paragraph */
+
+      --glass-bg: rgba(255, 255, 255, 0.15);
+      /* subtle white overlay */
+      --glass-blur: blur(12px);
+      /* frosted blur */
+      --glass-border-radius: 20px;
+      --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+      --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      /* optional shadow for depth */
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: radial-gradient(circle at 25% 30%,
+          rgba(0, 120, 255, 0.08),
+          transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(255, 0, 140, 0.08), transparent 60%),
+        linear-gradient(135deg, #050505, #131313, #000000);
+      background-attachment: fixed;
+
+      color: var(--color-card-heading);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    .detail-header {
+      padding: 30px 80px;
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .back-link {
+      color: var(--color-card-heading);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back-link:hover {
+      color: var(--color-paragraph);
+    }
+
+    .case-study {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 40px 100px;
+    }
+
+    .intro-section {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .project-title {
+      font-size: 56px;
+      font-weight: 600;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+      color: var(--color-card-heading);
+      line-height: 1.1;
+    }
+
+    .project-subtitle {
+      font-size: 20px;
+      color: var(--color-paragraph);
+      font-weight: 400;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .carousel-section {
+      margin-bottom: 80px;
+      /* background: #fafafa; */
+      padding: 60px 40px;
+      border-radius: 16px;
+    }
+
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      min-height: 400px;
+      max-height: 600px;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.95);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 28px;
+      color: #1a1a1a;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    }
+
+    .nav-btn:hover {
+      background: #ffffff;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .nav-btn.left {
+      left: 20px;
+    }
+
+    .nav-btn.right {
+      right: 20px;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-paragraph);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .carousel-dot.active {
+      background: #1a1a1a;
+      width: 30px;
+      border-radius: 5px;
+    }
+
+    .carousel-dot:hover {
+      background: #999;
+    }
+
+    .story-section {
+      margin-top: 60px;
+    }
+
+    .story-section h2 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-card-heading);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 60px;
+      margin-bottom: 20px;
+    }
+
+    .story-section p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--color-paragraph);
+      margin-bottom: 30px;
+    }
+
+    .story-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+    }
+
+    .story-section ul li {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--color-paragraph);
+      padding-left: 30px;
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .story-section ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--color-card-paragraph);
+      font-weight: 600;
+    }
+
+    .story-section strong {
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    .story-section h2:not(:first-child) {
+      border-top: 1px solid #f0f0f0;
+      padding-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .detail-header {
+        padding: 20px 30px;
+      }
+
+      .case-study {
+        padding: 40px 20px 80px;
+      }
+
+      .project-title {
+        font-size: 36px;
+      }
+
+      .project-subtitle {
+        font-size: 16px;
+      }
+
+      .carousel-section {
+        padding: 40px 20px;
+      }
+
+      .carousel img {
+        min-height: 250px;
+      }
+
+      .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+      }
+
+      .nav-btn.left {
+        left: 10px;
+      }
+
+      .nav-btn.right {
+        right: 10px;
+      }
+
+      .story-section p,
+      .story-section ul li {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="detail-header">
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+  </header>
+
+  <main class="case-study">
+    <!-- Project Title -->
+    <section class="intro-section">
+      <h1 id="projectTitle" class="project-title">Loading...</h1>
+      <p class="project-subtitle">A detailed look into design thinking, user empathy, and business alignment.</p>
+    </section>
+
+    <!-- Image Carousel -->
+    <section class="carousel-section">
+      <div class="carousel">
+        <button class="nav-btn left" onclick="prevImage()">‹</button>
+        <img id="carouselImage" src="" alt="Project Image">
+        <button class="nav-btn right" onclick="nextImage()">›</button>
+      </div>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+    <!-- Storytelling Sections -->
+    <section class="story-section">
+      <h2>The Challenge</h2>
+      <p id="projectChallenge">Loading project details...</p>
+
+      <h2>My Process</h2>
+      <p id="projectProcess">Loading process information...</p>
+
+      <h2>The Solution</h2>
+      <p id="projectSolution">Loading solution details...</p>
+
+      <h2>The Result</h2>
+      <ul id="projectResult">
+        <li>Loading results...</li>
+      </ul>
+
+      <h2>Client Impact</h2>
+      <p id="projectImpact">Loading impact information...</p>
+    </section>
+  </main>
+
+  <script>
+    let currentImageIndex = 0;
+
+    // Load project data from localStorage
+    let projectData = JSON.parse(localStorage.getItem("selectedProject"));
+
+    // Fallback demo if opened directly
+    if (!projectData) {
+      projectData = {
+        title: "Demo Project - UI/UX Case Study",
+        about: "This is a sample UI/UX case study showcasing the design thinking process.",
+        challenge: "This demo shows how content loads dynamically. The challenge was creating an engaging storytelling format.",
+        process: "Data comes from localStorage when you click a project. The system uses JavaScript to populate all sections.",
+        solution: "Created a reusable layout with minimal design focusing on content hierarchy and readability.",
+        result: [
+          "Dynamic project loading works smoothly",
+          "Each project has unique content",
+          "No backend required"
+        ],
+        impact: "Better portfolio storytelling and professional UX presentation that converts visitors into clients.",
+        images: [
+          "https://placehold.co/1200x600/eeeeee/000000?text=Demo+Image+1",
+          "https://placehold.co/1200x600/f7f7f7/000000?text=Demo+Image+2",
+          "https://placehold.co/1200x600/e0e0e0/000000?text=Demo+Image+3"
+        ]
+      };
+    }
+
+    // DOM elements
+    const projectTitle = document.getElementById("projectTitle");
+    const projectChallenge = document.getElementById("projectChallenge");
+    const projectProcess = document.getElementById("projectProcess");
+    const projectSolution = document.getElementById("projectSolution");
+    const projectImpact = document.getElementById("projectImpact");
+    const projectResult = document.getElementById("projectResult");
+    const carouselImage = document.getElementById("carouselImage");
+    const dotsContainer = document.getElementById("carouselDots");
+    // projectImpact.innerHTML = project.impact;
+
+    // Populate content
+    projectTitle.textContent = projectData.title;
+    projectChallenge.textContent = projectData.challenge;
+    projectProcess.textContent = projectData.process;
+    projectSolution.textContent = projectData.solution;
+    projectImpact.innerHTML = projectData.impact;
+    projectResult.innerHTML = projectData.result.map(r => `<li>${r}</li>`).join("");
+    carouselImage.src = projectData.images[0];
+
+    // Create carousel dots
+    function createCarouselDots() {
+      dotsContainer.innerHTML = "";
+      projectData.images.forEach((_, index) => {
+        const dot = document.createElement("div");
+        dot.className = `carousel-dot ${index === 0 ? "active" : ""}`;
+        dot.onclick = () => goToImage(index);
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    // Update carousel
+    function updateCarousel() {
+      carouselImage.src = projectData.images[currentImageIndex];
+      const dots = document.querySelectorAll(".carousel-dot");
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentImageIndex);
+      });
+    }
+
+    // Navigation
+    function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % projectData.images.length;
+      updateCarousel();
+    }
+
+    function prevImage() {
+      currentImageIndex = (currentImageIndex - 1 + projectData.images.length) % projectData.images.length;
+      updateCarousel();
+    }
+
+    function goToImage(index) {
+      currentImageIndex = index;
+      updateCarousel();
+    }
+
+    // Initialize
+    createCarouselDots();
+    setInterval(nextImage, 5000);
+
+  </script>
+</body>
+
+</html>

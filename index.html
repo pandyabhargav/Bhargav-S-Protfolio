@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhargav Sutariya</title>
+     <link rel="icon" type="image/png" href="./images/logo.svg">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#works">Works</a>
+            <a href="#about">About me</a>
+            <a href="#why-choose">Why Choose Me</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#faq">FaQ</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Designing digital experiences</h1>
+        <p>Specialized in UI/UX design that creates intuitive<br>and engaging user experiences for digital products.</p>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio" id="works">
+        <div class="portfolio-rows">
+            <!-- Row 1 - Scrolling Left -->
+            <div class="portfolio-row portfolio-row-1" id="row1"></div>
+
+            <!-- Row 2 - Scrolling Right -->
+            <div class="portfolio-row portfolio-row-2" id="row2"></div>
+
+            <!-- Row 3 - Scrolling Left -->
+            <div class="portfolio-row portfolio-row-3" id="row3"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About me</h2>
+                <p>I'm a passionate UI/UX designer with 10+ years of experience crafting intuitive, visually
+                    appealing, and high-performing digital experiences. I focus on designs that not only look
+                    stunning but also solve real user problems and drive results.</p>
+                <p>Over the years, I've collaborated with 200+ clients across 15+ industries, helping businesses
+                    transform their digital products through strategic design thinking and a user-centered
+                    approach. Let's work together to bring your vision to life and create experiences your users will
+                    love!</p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon"></div>
+                        <span>300+ Projects Completed</span>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon"></div>
+                        <span>15+ Industries Served</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image"><img src="./images/bhargav.webp" alt="bhargav"></div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me -->
+    <section class="why-choose" id="why-choose">
+        <h2>Why choose me?</h2>
+        <p class="why-choose-subtitle">Here's why I'm the perfect choice for your UI/UX design needs.</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>User-Centered</h3>
+                <p>I design with users in mind, creating experiences that are intuitive, accessible, and delightful to
+                    use.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✓</div>
+                <h3>Reliable</h3>
+                <p>With 300+ successful projects delivered, I bring proven expertise and consistency to every
+                    engagement.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⭐</div>
+                <h3>Proven Experience</h3>
+                <p>10+ years of experience designing for web, mobile, and SaaS products across multiple industries.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⏰</div>
+                <h3>Timely Delivery</h3>
+                <p>Meeting deadlines consistently without compromising on quality, research, or design excellence.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👁️</div>
+                <h3>Attention to Detail</h3>
+                <p>Every pixel matters. I ensure designs are polished, consistent, and aligned with your brand.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>Communication</h3>
+                <p>Clear, transparent communication at every stage, ensuring alignment and successful outcomes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Happy clients</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">300+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Years of Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Industries Served</div>
+            </div>
+        </div>
+        <h2>Design Impact & Analytics</h2>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="reviews">
+        <h2>Client Reviews</h2>
+        <p class="testimonials-subtitle">Discover what my clients say about their experience on working with me.</p>
+        <div class="testimonials-container">
+            <div class="testimonials-track" id="testimonialsTrack">
+                <!-- Testimonials will be duplicated for infinite scroll -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <p class="faq-subtitle">Find answers to common questions about working with me.</p>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="question">What services do you offer? <span class="arrow">▶</span></div>
+                <div class="answer">I specialize in UI/UX design for web and mobile applications, including wireframing,
+                    prototyping, user research, and design systems.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">What is your typical project timeline? <span class="arrow">▶</span></div>
+                <div class="answer">Project timelines vary based on scope, but typically range from 2-8 weeks. I'll
+                    provide a detailed timeline after understanding your requirements.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">How do you charge for your services? <span class="arrow">▶</span></div>
+                <div class="answer">I offer both project-based and hourly rates depending on your needs. Contact me for
+                    a custom quote based on your specific requirements.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Do you offer revisions? <span class="arrow">▶</span></div>
+                <div class="answer">Yes, I include 2-3 rounds of revisions in my standard packages to ensure the final
+                    design meets your expectations.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">What tools do you use? <span class="arrow">▶</span></div>
+                <div class="answer">I primarily work with Figma, Adobe XD, and Sketch for design, along with prototyping
+                    tools like InVision and Principle.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="copyright">
+            <p> © Bhargav Sutariya 2025</p>
+        </div>
+    </footer>
+
+    <!-- Modal for full image view -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <img id="modalImage" src="" alt="Full view">
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
